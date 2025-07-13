@@ -32,14 +32,12 @@
       <li>Performed Hypot and multimeter tests on switchboards and collaborated across teams.</li>
       <li>Prepared electrical systems for power-up and verification.</li>
     </ul>
-
     <h3>Design Engineer – Notre Dame Rocketry Club</h3>
     <p><em>Aug 2023 – Present</em></p>
     <ul>
       <li>Used RockSim and Open Rocket for aerodynamic testing and flight stability.</li>
       <li>Designed propulsion integration systems in Fusion 360.</li>
     </ul>
-
     <h3>Research Assistant – Thermodynamics (Rome)</h3>
     <p><em>Aug 2024 – Dec 2024</em></p>
     <ul>
@@ -52,7 +50,6 @@
     <h2>Projects</h2>
     <h3>RC Car Drivetrain</h3>
     <p>Designed and simulated a high-performance drivetrain in SolidWorks, balancing torque and speed for remote-controlled racing conditions.</p>
-
     <h3>Mechanical Catapult</h3>
     <p>Fabricated a lightweight, high-strength catapult using 3D printing and water-jet cutting, winning design awards at Notre Dame.</p>
   </section>
