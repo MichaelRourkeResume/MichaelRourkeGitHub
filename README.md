@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Michael Rourke | Aerospace Engineering</title>
+</head>
 <body>
   <header>
     <h1>Michael Rourke</h1>
@@ -12,49 +16,63 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
   <section id="about">
     <h2>About Me</h2>
-    <p>I'm a junior studying Aerospace Engineering at the University of Notre Dame with a passion for propulsion systems, CAD modeling, and flight simulation. I’ve worked on everything from rocket design in club competitions to research on thermodynamic cycles in Rome. I'm currently seeking internship opportunities in aerospace design or systems engineering.</p>
+    <p>I’m a junior at the University of Notre Dame studying Aerospace Engineering. I’ve worked on thermodynamic cycle modeling, propulsion integration, CAD-based manufacturing design, and electronic testing of power systems. I'm passionate about propulsion, vehicle dynamics, and hands-on engineering challenges, and I'm actively seeking opportunities in aerospace systems and research.</p>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
-    <h3>Engineering Intern – SAI Advanced Power Solutions</h3>
-    <p><em>May 2023 – July 2023, May 2024 – July 2024</em></p>
+    <h3>Notre Dame Rocketry Club – Design Engineer</h3>
+    <p><em>Aug 2023 – May 2024</em></p>
     <ul>
-      <li>Designed component layouts using Creo CAD for a new manufacturing facility.</li>
-      <li>Performed Hypot and multimeter tests on switchboards and collaborated across teams.</li>
-      <li>Prepared electrical systems for power-up and verification.</li>
+      <li>Designed propulsion integration systems in Fusion 360 for a competition rocket exceeding 4,000 ft altitude.</li>
+      <li>Selected and analyzed composite materials to optimize thrust-to-weight ratio and structural integrity.</li>
+      <li>Performed aerodynamic simulations using RockSim and Open Rocket to ensure stable and predictable flight.</li>
+      <li>Led final assembly of rocket components with high-precision alignment and secure structural connections.</li>
     </ul>
-    <h3>Design Engineer – Notre Dame Rocketry Club</h3>
-    <p><em>Aug 2023 – Present</em></p>
-    <ul>
-      <li>Used RockSim and Open Rocket for aerodynamic testing and flight stability.</li>
-      <li>Designed propulsion integration systems in Fusion 360.</li>
-    </ul>
-    <h3>Research Assistant – Thermodynamics (Rome)</h3>
+    <h3>Thermodynamics Research – Notre Dame Global Gateway (Rome)</h3>
     <p><em>Aug 2024 – Dec 2024</em></p>
     <ul>
-      <li>Simulated engine thermodynamics using MATLAB.</li>
-      <li>Researched Brayton cycle efficiency for next-gen aerospace propulsion.</li>
+      <li>Assisted Professor Pietro Paolo Ciottoli in research on thermodynamic cycle efficiency for aerospace propulsion.</li>
+      <li>Developed MATLAB simulations for combustion dynamics and heat transfer in engine configurations.</li>
+      <li>Conducted Brayton cycle parametric studies and created visualization tools for data interpretation.</li>
+    </ul>
+    <h3>SAI Advanced Power Solutions – Engineering Intern</h3>
+    <p><em>May 2023 – July 2023, May 2024 – July 2024</em></p>
+    <ul>
+      <li>Used Creo CAD to design optimized component layouts for manufacturing systems.</li>
+      <li>Performed Hypot, multimeter, and 480V system testing of low/medium-voltage switchboards.</li>
+      <li>Led quality assurance in the assembly of electrical systems for zero-defect verification.</li>
     </ul>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <h3>RC Car Drivetrain</h3>
-    <p>Designed and simulated a high-performance drivetrain in SolidWorks, balancing torque and speed for remote-controlled racing conditions.</p>
     <h3>Mechanical Catapult</h3>
-    <p>Fabricated a lightweight, high-strength catapult using 3D printing and water-jet cutting, winning design awards at Notre Dame.</p>
+    <ul>
+      <li>Designed and fabricated award-winning catapult using 3D printing and water-jet cutting.</li>
+      <li>Led simulation-driven redesign of launcher arm and trigger mechanism to enhance range and reliability.</li>
+    </ul>
+    <h3>RC Car System</h3>
+    <ul>
+      <li>Built competitive RC drivetrain capable of ramp navigation and projectile launching.</li>
+      <li>Simulated drivetrain motion and component interactions in SolidWorks to optimize performance.</li>
+    </ul>
+    <h3>Vehicle Systems Simulation</h3>
+    <ul>
+      <li>Created MATLAB-based model simulating vehicle dynamics with environmental variability.</li>
+      <li>Developed multi-degree-of-freedom framework for real-time system response analysis.</li>
+    </ul>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:mrourke@nd.edu">mrourke@nd.edu</a></p>
     <p>Phone: (331) 703-0556</p>
+    <p>Location: Bartlett, IL</p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/your-link">linkedin.com/in/your-link</a></p>
-    <p><a href="Michael-Rourke-Resume-2025.pdf" download>Download Resume (PDF)</a></p>
+    <!-- Optional: <p><a href="Michael-Rourke-Resume-2025.pdf" download>Download Resume (PDF)</a></p> -->
   </section>
 
   <footer>
