@@ -413,13 +413,27 @@
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
       border-color: rgba(102, 126, 234, 0.5);
     }
 
     .card:hover::before {
       opacity: 1;
+    }
+
+    /* Only apply transform hover effects to interactive elements */
+    .btn:hover,
+    .contact-item:hover,
+    .download-resume:hover,
+    .nav-links a:hover {
+      transform: translateY(-2px);
+    }
+
+    .experience-card:hover {
+      border-color: var(--accent);
+    }
+
+    .project-card:hover {
+      border-color: rgba(102, 126, 234, 0.5);
     }
 
     /* About Section */
@@ -432,9 +446,40 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
       margin-top: 2rem;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem 1rem;
+      border-radius: var(--radius);
+      transition: var(--transition);
+      border: 1px solid var(--border);
+    }
+
+    .skill-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .skill-icon {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .skill-item span {
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: center;
+      font-size: 0.9rem;
     }
 
     .skill-tag {
@@ -551,7 +596,6 @@
     }
 
     .experience-card:hover {
-      transform: translateX(10px);
       border-color: var(--accent);
     }
 
@@ -595,10 +639,11 @@
     }
 
     .experience-achievements li::before {
-      content: '🚀';
+      content: '▶';
       position: absolute;
       left: 0;
       font-size: 1rem;
+      color: var(--accent);
     }
 
     /* Projects Grid */
@@ -636,8 +681,7 @@
     }
 
     .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+      border-color: rgba(102, 126, 234, 0.5);
     }
 
     .project-image {
@@ -713,7 +757,7 @@
     }
 
     .contact-item:hover {
-      transform: translateX(10px);
+      transform: translateY(-2px);
       border-color: var(--accent);
       box-shadow: var(--shadow-lg);
     }
@@ -750,6 +794,16 @@
       .experience-header {
         flex-direction: column;
         gap: 1rem;
+      }
+
+      .experience-header > div {
+        flex-direction: column !important;
+        gap: 1rem !important;
+      }
+
+      .experience-header img {
+        width: 100px !important;
+        height: 67px !important;
       }
     }
 
@@ -909,16 +963,46 @@
 
           <h4 style="margin-bottom: 1.5rem; color: var(--accent-light);">Core Competencies</h4>
           <div class="skills-grid">
-            <span class="skill-tag">SolidWorks</span>
-            <span class="skill-tag">Creo</span>
-            <span class="skill-tag">Fusion 360</span>
-            <span class="skill-tag">MATLAB</span>
-            <span class="skill-tag">RockSim</span>
-            <span class="skill-tag">OpenRocket</span>
-            <span class="skill-tag">3D Printing</span>
-            <span class="skill-tag">Manufacturing</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Thermodynamics</span>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidworks/solidworks-original.svg" alt="SolidWorks" class="skill-icon">
+              <span>SolidWorks</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/autocad/autocad-original.svg" alt="Creo" class="skill-icon" onerror="this.src='https://via.placeholder.com/40x40/3182ce/white?text=C'">
+              <span>Creo</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fusion360/fusion360-original.svg" alt="Fusion 360" class="skill-icon" onerror="this.src='https://via.placeholder.com/40x40/f093fb/white?text=F'">
+              <span>Fusion 360</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB" class="skill-icon">
+              <span>MATLAB</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://via.placeholder.com/40x40/ed8936/white?text=R" alt="RockSim" class="skill-icon">
+              <span>RockSim</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://via.placeholder.com/40x40/38a169/white?text=O" alt="OpenRocket" class="skill-icon">
+              <span>OpenRocket</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://via.placeholder.com/40x40/667eea/white?text=3D" alt="3D Printing" class="skill-icon">
+              <span>3D Printing</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://via.placeholder.com/40x40/764ba2/white?text=M" alt="Manufacturing" class="skill-icon">
+              <span>Manufacturing</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon">
+              <span>Python</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://via.placeholder.com/40x40/f5576c/white?text=T" alt="Thermodynamics" class="skill-icon">
+              <span>Thermodynamics</span>
+            </div>
           </div>
         </div>
         
@@ -1009,9 +1093,16 @@
         <div class="experience-item fade-in-up">
           <div class="experience-card">
             <div class="experience-header">
-              <div>
-                <h3 class="experience-title">Thermodynamics Research Assistant</h3>
-                <p class="experience-company">Notre Dame Global Gateway - Rome, Italy</p>
+              <div style="display: flex; align-items: flex-start; gap: 2rem;">
+                <img 
+                  src="Michael web site/assets/rome-research.jpg" 
+                  alt="Thermodynamics Research in Rome"
+                  style="width: 120px; height: 80px; object-fit: cover; border-radius: var(--radius); border: 2px solid var(--border);"
+                  onerror="this.style.display='none'">
+                <div>
+                  <h3 class="experience-title">Thermodynamics Research Assistant</h3>
+                  <p class="experience-company">Notre Dame Global Gateway - Rome, Italy</p>
+                </div>
               </div>
               <span class="experience-date">Aug 2024 – Dec 2024</span>
             </div>
@@ -1027,9 +1118,16 @@
         <div class="experience-item fade-in-up">
           <div class="experience-card">
             <div class="experience-header">
-              <div>
-                <h3 class="experience-title">Design Engineer</h3>
-                <p class="experience-company">Notre Dame Rocketry Club</p>
+              <div style="display: flex; align-items: flex-start; gap: 2rem;">
+                <img 
+                  src="Michael web site/Rocket_pic.png" 
+                  alt="Notre Dame Rocketry Club Project"
+                  style="width: 120px; height: 80px; object-fit: cover; border-radius: var(--radius); border: 2px solid var(--border);"
+                  onerror="this.style.display='none'">
+                <div>
+                  <h3 class="experience-title">Design Engineer</h3>
+                  <p class="experience-company">Notre Dame Rocketry Club</p>
+                </div>
               </div>
               <span class="experience-date">Aug 2023 – May 2024</span>
             </div>
@@ -1045,9 +1143,16 @@
         <div class="experience-item fade-in-up">
           <div class="experience-card">
             <div class="experience-header">
-              <div>
-                <h3 class="experience-title">Engineering Intern</h3>
-                <p class="experience-company">SAI Advanced Power Solutions</p>
+              <div style="display: flex; align-items: flex-start; gap: 2rem;">
+                <img 
+                  src="Michael web site/assets/Switchboard.jpg" 
+                  alt="SAI Advanced Power Solutions Work"
+                  style="width: 120px; height: 80px; object-fit: cover; border-radius: var(--radius); border: 2px solid var(--border);"
+                  onerror="this.style.display='none'">
+                <div>
+                  <h3 class="experience-title">Engineering Intern</h3>
+                  <p class="experience-company">SAI Advanced Power Solutions</p>
+                </div>
               </div>
               <span class="experience-date">May 2023 – Jul 2025 (Multiple Terms)</span>
             </div>
@@ -1371,26 +1476,7 @@
       });
     });
 
-    // Interactive card tilt effect
-    document.querySelectorAll('.card, .project-card').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-      });
-      
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
-      });
-    });
+    // Removed interactive card tilt effect for cleaner user experience
 
     // Dynamic particle generation
     function createParticle() {
