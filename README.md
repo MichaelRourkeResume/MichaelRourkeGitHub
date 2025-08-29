@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Michael Rourke | Aerospace Engineering Professional</title>
-
   <!-- Enhanced SEO and Social Media -->
   <link rel="icon" type="image/jpg" href="Michael web site/assets/Switchboard.jpg">
   <meta name="description" content="Aerospace Engineering professional specializing in propulsion systems, vehicle dynamics, and advanced manufacturing. Experience in thermodynamics research, rocket design, and electrical systems.">
