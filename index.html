@@ -43,7 +43,7 @@
       --radius-lg: 24px;
       --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -266,6 +266,12 @@
       border-image: var(--gradient-primary) 1;
       box-shadow: 0 0 40px var(--glow);
       transition: var(--transition);
+    }
+
+    .hero-image-placeholder {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
       background: var(--gradient-primary);
       display: flex;
       align-items: center;
@@ -273,9 +279,13 @@
       font-size: 3rem;
       font-weight: 900;
       color: white;
+      box-shadow: 0 0 40px var(--glow);
+      transition: var(--transition);
+      border: 4px solid;
+      border-image: var(--gradient-primary) 1;
     }
 
-    .hero-image:hover {
+    .hero-image:hover, .hero-image-placeholder:hover {
       transform: scale(1.05) rotate(5deg);
       box-shadow: 0 0 60px var(--glow);
     }
@@ -388,7 +398,7 @@
         gap: 2rem;
       }
       
-      .hero-image {
+      .hero-image, .hero-image-placeholder {
         width: 150px;
         height: 150px;
       }
@@ -665,6 +675,17 @@
       border-color: rgba(102, 126, 234, 0.5);
     }
 
+    .project-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .project-card:hover .project-image {
+      transform: scale(1.1);
+    }
+
     .project-placeholder {
       width: 100%;
       height: 250px;
@@ -891,7 +912,15 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content fade-in-up">
-        <div class="hero-image">MR</div>
+        <img
+          class="hero-image"
+          src="assets\Headshot.jpg"
+          alt="Michael Rourke - Professional Headshot"
+          loading="eager"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+        <div class="hero-image-placeholder" style="display: none;">MR</div>
+        
         <div class="hero-text">
           <h1>Michael Rourke</h1>
           <p class="hero-subtitle">Aerospace Engineering Senior | University of Notre Dame</p>
@@ -903,9 +932,15 @@
             <span class="tag">📊 MATLAB Simulation</span>
           </div>
           <div class="cta-buttons">
-            <button class="btn btn-primary" onclick="alert('Resume download would be available when hosted with actual PDF file')">
+            
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <!-- YOUR RESUME PDF GOES HERE - REPLACE THIS LINK       -->
+            <!-- Change "resume.pdf" to your actual PDF filename     -->
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+            <a href="assets\Michael Rourke Resume 2025 v6 (2).pdf" class="btn btn-primary" download>
               📄 Download Resume
-            </button>
+            </a>
+            
             <a href="#contact" class="btn btn-secondary">
               💬 Get In Touch
             </a>
@@ -1125,8 +1160,20 @@
       </div>
 
       <div class="projects-grid">
+        
+        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <!-- PROJECT 1 IMAGE: CATAPULT PROJECT PHOTO GOES HERE   -->
+        <!-- Change "catapult-project.jpg" to your actual filename -->
+        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
         <div class="project-card fade-in-up">
-          <div class="project-placeholder">🏆</div>
+          <img
+            class="project-image"
+            src="assets\Catapult_pic.JPEG"
+            alt="Award-winning mechanical catapult design"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+          <div class="project-placeholder" style="display: none;">🏆</div>
           <div class="project-content">
             <h3 class="project-title">🏆 Award-Winning Mechanical Catapult</h3>
             <p class="project-description">Designed and fabricated a 1st place competition catapult using advanced manufacturing techniques including 3D printing and precision water-jet cutting. Featured simulation-driven redesign of launcher arm and trigger mechanism for optimal range and reliability.</p>
@@ -1139,8 +1186,19 @@
           </div>
         </div>
 
+        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <!-- PROJECT 2 IMAGE: RC CAR PROJECT PHOTO GOES HERE     -->
+        <!-- Change "rc-car-project.jpg" to your actual filename -->
+        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
         <div class="project-card fade-in-up">
-          <div class="project-placeholder">🚗</div>
+          <img
+            class="project-image"
+            src="assets\RC_Car_Pic.png"
+            alt="High-performance RC car drivetrain system"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+          <div class="project-placeholder" style="display: none;">🚗</div>
           <div class="project-content">
             <h3 class="project-title">🚗 High-Performance RC Car System</h3>
             <p class="project-description">Engineered award-winning drive system optimized for speed, torque, and ramp handling capabilities. Utilized SolidWorks motion simulation to optimize drivetrain performance and integrate defensive/projectile systems for competition scenarios.</p>
@@ -1153,8 +1211,19 @@
           </div>
         </div>
 
+        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <!-- PROJECT 3 IMAGE: SIMULATION PROJECT SCREENSHOT HERE -->
+        <!-- Change "simulation-project.jpg" to your actual filename -->
+        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
         <div class="project-card fade-in-up">
-          <div class="project-placeholder">🔬</div>
+          <img
+            class="project-image"
+            src="simulation-project.jpg"
+            alt="Advanced vehicle dynamics simulation interface"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+          <div class="project-placeholder" style="display: none;">🔬</div>
           <div class="project-content">
             <h3 class="project-title">🔬 Vehicle Systems Simulation</h3>
             <p class="project-description">Developed comprehensive MATLAB-based model simulating complex vehicle dynamics with environmental variability factors. Created multi-DOF framework enabling real-time system response analysis for aerospace applications.</p>
@@ -1222,13 +1291,13 @@
         </div>
 
         <div>
-          <button class="download-resume fade-in-up" onclick="alert('Resume download would be available when hosted with actual PDF file')">
+          <a href="assets\Michael Rourke Resume 2025 v6 (2).pdf" download class="download-resume fade-in-up">
             <svg style="width: 2rem; height: 2rem; margin-bottom: 1rem;" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
             </svg>
             <div>Download Complete Resume</div>
             <small style="opacity: 0.8;">PDF Format - Updated 2025</small>
-          </button>
+          </a>
 
           <div class="card fade-in-up" style="margin-top: 2rem;">
             <h4 style="margin-bottom: 1.5rem; color: var(--accent-light);">🎯 Seeking Opportunities In:</h4>
@@ -1265,7 +1334,7 @@
               </div>
               <div style="display: flex; align-items: center; gap: 0.75rem;">
                 <span>💰</span>
-                <span>Proven cost reduction achievements </span>
+                <span>Proven cost reduction achievements</span>
               </div>
               <div style="display: flex; align-items: center; gap: 0.75rem;">
                 <span>🏆</span>
