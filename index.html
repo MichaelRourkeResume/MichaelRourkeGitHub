@@ -266,6 +266,13 @@
       border-image: var(--gradient-primary) 1;
       box-shadow: 0 0 40px var(--glow);
       transition: var(--transition);
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 900;
+      color: white;
     }
 
     .hero-image:hover {
@@ -420,22 +427,6 @@
       opacity: 1;
     }
 
-    /* Only apply transform hover effects to interactive elements */
-    .btn:hover,
-    .contact-item:hover,
-    .download-resume:hover,
-    .nav-links a:hover {
-      transform: translateY(-2px);
-    }
-
-    .experience-card:hover {
-      border-color: var(--accent);
-    }
-
-    .project-card:hover {
-      border-color: rgba(102, 126, 234, 0.5);
-    }
-
     /* About Section */
     .about-grid {
       display: grid;
@@ -472,7 +463,14 @@
     .skill-icon {
       width: 40px;
       height: 40px;
-      object-fit: contain;
+      border-radius: 8px;
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
     }
 
     .skill-item span {
@@ -480,23 +478,6 @@
       color: var(--text-primary);
       text-align: center;
       font-size: 0.9rem;
-    }
-
-    .skill-tag {
-      background: var(--gradient-accent);
-      color: var(--white);
-      padding: 0.75rem 1rem;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-align: center;
-      transition: var(--transition);
-      box-shadow: var(--shadow-md);
-    }
-
-    .skill-tag:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: var(--shadow-lg);
     }
 
     .quick-facts {
@@ -684,15 +665,16 @@
       border-color: rgba(102, 126, 234, 0.5);
     }
 
-    .project-image {
+    .project-placeholder {
       width: 100%;
       height: 250px;
-      object-fit: cover;
-      transition: var(--transition);
-    }
-
-    .project-card:hover .project-image {
-      transform: scale(1.1);
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
     }
 
     .project-content {
@@ -779,6 +761,7 @@
       font-size: 1.25rem;
       transition: var(--transition);
       box-shadow: var(--shadow-xl);
+      display: block;
     }
 
     .download-resume:hover {
@@ -794,16 +777,6 @@
       .experience-header {
         flex-direction: column;
         gap: 1rem;
-      }
-
-      .experience-header > div {
-        flex-direction: column !important;
-        gap: 1rem !important;
-      }
-
-      .experience-header img {
-        width: 100px !important;
-        height: 67px !important;
       }
     }
 
@@ -918,11 +891,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content fade-in-up">
-        <img
-          class="hero-image"
-          src="Michael web site/assets/Headshot.jpg"
-          alt="Michael Rourke - Professional Headshot"
-          loading="eager">
+        <div class="hero-image">MR</div>
         <div class="hero-text">
           <h1>Michael Rourke</h1>
           <p class="hero-subtitle">Aerospace Engineering Senior | University of Notre Dame</p>
@@ -934,9 +903,9 @@
             <span class="tag">📊 MATLAB Simulation</span>
           </div>
           <div class="cta-buttons">
-            <a href="Michael web site/assets/Michael Rourke Resume 2025 v6 (1).pdf" class="btn btn-primary" download>
+            <button class="btn btn-primary" onclick="alert('Resume download would be available when hosted with actual PDF file')">
               📄 Download Resume
-            </a>
+            </button>
             <a href="#contact" class="btn btn-secondary">
               💬 Get In Touch
             </a>
@@ -964,43 +933,43 @@
           <h4 style="margin-bottom: 1.5rem; color: var(--accent-light);">Core Competencies</h4>
           <div class="skills-grid">
             <div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidworks/solidworks-original.svg" alt="SolidWorks" class="skill-icon">
+              <div class="skill-icon">SW</div>
               <span>SolidWorks</span>
             </div>
             <div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/autocad/autocad-original.svg" alt="Creo" class="skill-icon" onerror="this.src='https://via.placeholder.com/40x40/3182ce/white?text=C'">
+              <div class="skill-icon">C</div>
               <span>Creo</span>
             </div>
             <div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fusion360/fusion360-original.svg" alt="Fusion 360" class="skill-icon" onerror="this.src='https://via.placeholder.com/40x40/f093fb/white?text=F'">
+              <div class="skill-icon">F360</div>
               <span>Fusion 360</span>
             </div>
             <div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB" class="skill-icon">
+              <div class="skill-icon">ML</div>
               <span>MATLAB</span>
             </div>
             <div class="skill-item">
-              <img src="https://via.placeholder.com/40x40/ed8936/white?text=R" alt="RockSim" class="skill-icon">
+              <div class="skill-icon">RS</div>
               <span>RockSim</span>
             </div>
             <div class="skill-item">
-              <img src="https://via.placeholder.com/40x40/38a169/white?text=O" alt="OpenRocket" class="skill-icon">
+              <div class="skill-icon">OR</div>
               <span>OpenRocket</span>
             </div>
             <div class="skill-item">
-              <img src="https://via.placeholder.com/40x40/667eea/white?text=3D" alt="3D Printing" class="skill-icon">
+              <div class="skill-icon">3D</div>
               <span>3D Printing</span>
             </div>
             <div class="skill-item">
-              <img src="https://via.placeholder.com/40x40/764ba2/white?text=M" alt="Manufacturing" class="skill-icon">
+              <div class="skill-icon">MFG</div>
               <span>Manufacturing</span>
             </div>
             <div class="skill-item">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon">
+              <div class="skill-icon">PY</div>
               <span>Python</span>
             </div>
             <div class="skill-item">
-              <img src="https://via.placeholder.com/40x40/f5576c/white?text=T" alt="Thermodynamics" class="skill-icon">
+              <div class="skill-icon">TD</div>
               <span>Thermodynamics</span>
             </div>
           </div>
@@ -1093,16 +1062,9 @@
         <div class="experience-item fade-in-up">
           <div class="experience-card">
             <div class="experience-header">
-              <div style="display: flex; align-items: flex-start; gap: 2rem;">
-                <img 
-                  src="Michael web site/assets/rome-research.jpg" 
-                  alt="Thermodynamics Research in Rome"
-                  style="width: 120px; height: 80px; object-fit: cover; border-radius: var(--radius); border: 2px solid var(--border);"
-                  onerror="this.style.display='none'">
-                <div>
-                  <h3 class="experience-title">Thermodynamics Research Assistant</h3>
-                  <p class="experience-company">Notre Dame Global Gateway - Rome, Italy</p>
-                </div>
+              <div>
+                <h3 class="experience-title">Thermodynamics Research Assistant</h3>
+                <p class="experience-company">Notre Dame Global Gateway - Rome, Italy</p>
               </div>
               <span class="experience-date">Aug 2024 – Dec 2024</span>
             </div>
@@ -1118,16 +1080,9 @@
         <div class="experience-item fade-in-up">
           <div class="experience-card">
             <div class="experience-header">
-              <div style="display: flex; align-items: flex-start; gap: 2rem;">
-                <img 
-                  src="Michael web site/Rocket_pic.png" 
-                  alt="Notre Dame Rocketry Club Project"
-                  style="width: 120px; height: 80px; object-fit: cover; border-radius: var(--radius); border: 2px solid var(--border);"
-                  onerror="this.style.display='none'">
-                <div>
-                  <h3 class="experience-title">Design Engineer</h3>
-                  <p class="experience-company">Notre Dame Rocketry Club</p>
-                </div>
+              <div>
+                <h3 class="experience-title">Design Engineer</h3>
+                <p class="experience-company">Notre Dame Rocketry Club</p>
               </div>
               <span class="experience-date">Aug 2023 – May 2024</span>
             </div>
@@ -1143,16 +1098,9 @@
         <div class="experience-item fade-in-up">
           <div class="experience-card">
             <div class="experience-header">
-              <div style="display: flex; align-items: flex-start; gap: 2rem;">
-                <img 
-                  src="Michael web site/assets/Switchboard.jpg" 
-                  alt="SAI Advanced Power Solutions Work"
-                  style="width: 120px; height: 80px; object-fit: cover; border-radius: var(--radius); border: 2px solid var(--border);"
-                  onerror="this.style.display='none'">
-                <div>
-                  <h3 class="experience-title">Engineering Intern</h3>
-                  <p class="experience-company">SAI Advanced Power Solutions</p>
-                </div>
+              <div>
+                <h3 class="experience-title">Engineering Intern</h3>
+                <p class="experience-company">SAI Advanced Power Solutions</p>
               </div>
               <span class="experience-date">May 2023 – Jul 2025 (Multiple Terms)</span>
             </div>
@@ -1178,11 +1126,7 @@
 
       <div class="projects-grid">
         <div class="project-card fade-in-up">
-          <img
-            class="project-image"
-            src="Michael web site/assets/Catapult_pic.JPEG"
-            alt="Award-winning mechanical catapult design"
-            loading="lazy">
+          <div class="project-placeholder">🏆</div>
           <div class="project-content">
             <h3 class="project-title">🏆 Award-Winning Mechanical Catapult</h3>
             <p class="project-description">Designed and fabricated a 1st place competition catapult using advanced manufacturing techniques including 3D printing and precision water-jet cutting. Featured simulation-driven redesign of launcher arm and trigger mechanism for optimal range and reliability.</p>
@@ -1196,11 +1140,7 @@
         </div>
 
         <div class="project-card fade-in-up">
-          <img
-            class="project-image"
-            src="MichaelRourke web site/assets/RCcarPic.png"
-            alt="High-performance RC car drivetrain system"
-            loading="lazy">
+          <div class="project-placeholder">🚗</div>
           <div class="project-content">
             <h3 class="project-title">🚗 High-Performance RC Car System</h3>
             <p class="project-description">Engineered award-winning drive system optimized for speed, torque, and ramp handling capabilities. Utilized SolidWorks motion simulation to optimize drivetrain performance and integrate defensive/projectile systems for competition scenarios.</p>
@@ -1214,11 +1154,7 @@
         </div>
 
         <div class="project-card fade-in-up">
-          <img
-            class="project-image"
-            src="Michael web site/assets/BraytonPic.png"
-            alt="Advanced vehicle dynamics simulation interface"
-            loading="lazy">
+          <div class="project-placeholder">🔬</div>
           <div class="project-content">
             <h3 class="project-title">🔬 Vehicle Systems Simulation</h3>
             <p class="project-description">Developed comprehensive MATLAB-based model simulating complex vehicle dynamics with environmental variability factors. Created multi-DOF framework enabling real-time system response analysis for aerospace applications.</p>
@@ -1286,13 +1222,13 @@
         </div>
 
         <div>
-          <a href="assets/Michael Rourke Resume 2025 v6 (2).pdf" download class="download-resume fade-in-up">
+          <button class="download-resume fade-in-up" onclick="alert('Resume download would be available when hosted with actual PDF file')">
             <svg style="width: 2rem; height: 2rem; margin-bottom: 1rem;" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
             </svg>
             <div>Download Complete Resume</div>
             <small style="opacity: 0.8;">PDF Format - Updated 2025</small>
-          </a>
+          </button>
 
           <div class="card fade-in-up" style="margin-top: 2rem;">
             <h4 style="margin-bottom: 1.5rem; color: var(--accent-light);">🎯 Seeking Opportunities In:</h4>
@@ -1365,17 +1301,25 @@
     // Loading screen
     window.addEventListener('load', function() {
       setTimeout(() => {
-        document.getElementById('loading').style.opacity = '0';
-        setTimeout(() => {
-          document.getElementById('loading').style.display = 'none';
-        }, 500);
+        const loading = document.getElementById('loading');
+        if (loading) {
+          loading.style.opacity = '0';
+          setTimeout(() => {
+            loading.style.display = 'none';
+          }, 500);
+        }
       }, 1000);
     });
 
     // Mobile menu toggle
-    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-      document.getElementById('navLinks').classList.toggle('active');
-    });
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+      });
+    }
 
     // Typing animation
     const phrases = [
@@ -1391,8 +1335,10 @@
     let isDeleting = false;
     
     function typeWriter() {
-      const current = phrases[phraseIndex];
       const typingElement = document.getElementById('typingText');
+      if (!typingElement) return;
+      
+      const current = phrases[phraseIndex];
       
       if (isDeleting) {
         typingElement.textContent = current.substring(0, charIndex - 1);
@@ -1428,13 +1374,17 @@
             block: 'start'
           });
         }
-        document.getElementById('navLinks').classList.remove('active');
+        if (navLinks) {
+          navLinks.classList.remove('active');
+        }
       });
     });
 
     // Enhanced navbar scroll effect
     window.addEventListener('scroll', function() {
       const navbar = document.querySelector('.navbar');
+      if (!navbar) return;
+      
       if (window.scrollY > 100) {
         navbar.style.background = 'rgba(10, 14, 39, 0.95)';
         navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
@@ -1476,20 +1426,23 @@
       });
     });
 
-    // Removed interactive card tilt effect for cleaner user experience
-
     // Dynamic particle generation
     function createParticle() {
+      const particlesContainer = document.querySelector('.particles');
+      if (!particlesContainer) return;
+      
       const particle = document.createElement('li');
       particle.className = 'particle';
       particle.style.left = Math.random() * 100 + '%';
       particle.style.animationDuration = (Math.random() * 20 + 15) + 's';
       particle.style.animationDelay = Math.random() * 5 + 's';
       
-      document.querySelector('.particles').appendChild(particle);
+      particlesContainer.appendChild(particle);
       
       setTimeout(() => {
-        particle.remove();
+        if (particle.parentNode) {
+          particle.remove();
+        }
       }, 45000);
     }
 
