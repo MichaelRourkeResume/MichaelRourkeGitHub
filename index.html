@@ -533,6 +533,57 @@
       transform: scale(1.05);
     }
 
+    /* Interest Images Grid */
+    .interest-images-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .interest-image-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 1;
+      background: var(--gradient-primary);
+      transition: var(--transition);
+    }
+
+    .interest-image-item:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .interest-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .interest-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      background: var(--gradient-primary);
+    }
+
+    .interest-image-placeholder .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .interest-image-placeholder .label {
+      font-size: 0.9rem;
+    }
+
     @media (max-width: 768px) {
       .about-grid {
         grid-template-columns: 1fr;
@@ -540,6 +591,10 @@
       
       .interests-grid {
         grid-template-columns: 1fr;
+      }
+      
+      .interest-images-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -1132,6 +1187,66 @@
                 <strong>Mountain Climbing</strong>
               </div>
             </div>
+
+            <!-- Enhanced Interest Images Section -->
+            <h5 style="margin: 2rem 0 1rem 0; color: var(--accent-light);">Interest Highlights</h5>
+            <div class="interest-images-grid">
+              <div class="interest-image-item">
+                <img
+                  class="interest-image"
+                  src="assets\Africa_pic.jpg"
+                  alt="Marathon Running"
+                  loading="lazy"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                >
+                <div class="interest-image-placeholder" style="display: none;">
+                  <div class="icon">🏃‍♂️</div>
+                  <div class="label">Marathon Running</div>
+                </div>
+              </div>
+
+              <div class="interest-image-item">
+                <img
+                  class="interest-image"
+                  src="assets\water.jpg"
+                  alt="Golf"
+                  loading="lazy"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                >
+                <div class="interest-image-placeholder" style="display: none;">
+                  <div class="icon">⛳</div>
+                  <div class="label">Golf</div>
+                </div>
+              </div>
+
+              <div class="interest-image-item">
+                <img
+                  class="interest-image"
+                  src="assets\Kili_2.JPG"
+                  alt="National Parks"
+                  loading="lazy"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                >
+                <div class="interest-image-placeholder" style="display: none;">
+                  <div class="icon">🏞️</div>
+                  <div class="label">National Parks</div>
+                </div>
+              </div>
+
+              <div class="interest-image-item">
+                <img
+                  class="interest-image"
+                  src="assets\Kili_pic.jpg"
+                  alt="Mountain Climbing"
+                  loading="lazy"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                >
+                <div class="interest-image-placeholder" style="display: none;">
+                  <div class="icon">🏔️</div>
+                  <div class="label">Mountain Climbing</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1147,6 +1262,38 @@
       </div>
 
       <div class="experience-timeline">
+        <!-- SAI EXPERIENCE - NOW FIRST -->
+        <div class="experience-item fade-in-up">
+          <div class="experience-card">
+            <div class="experience-image-container">
+              <img
+                class="experience-image"
+                src="assets\Logo_SAI.avif"
+                alt="SAI Advanced Power Solutions Engineering Work"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="experience-image-placeholder" style="display: none;">⚡</div>
+            </div>
+            <div class="experience-content">
+              <div class="experience-header">
+                <div>
+                  <h3 class="experience-title">Engineering Intern</h3>
+                  <p class="experience-company">SAI Advanced Power Solutions</p>
+                </div>
+                <span class="experience-date">May 2023 – Jul 2025 (Multiple Terms)</span>
+              </div>
+              <ul class="experience-achievements">
+                <li>Designed optimized component layouts for manufacturing systems using Creo CAD, improving production efficiency and reducing assembly time</li>
+                <li>Executed comprehensive electrical testing protocols including Hypot, multimeter diagnostics, and 480V system verification for low/medium-voltage switchboards</li>
+                <li>Spearheaded quality assurance initiatives in electrical system assembly, achieving zero-defect verification standards</li>
+                <li><strong>Process Improvement:</strong> Developed improved insulation process for bus bar MCCB connectors using heat shrink tubing, reducing material costs by 25% while decreasing installation time significantly</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROME RESEARCH - NOW SECOND -->
         <div class="experience-item fade-in-up">
           <div class="experience-card">
             <div class="experience-image-container">
@@ -1177,6 +1324,7 @@
           </div>
         </div>
 
+        <!-- ROCKETRY CLUB - NOW THIRD -->
         <div class="experience-item fade-in-up">
           <div class="experience-card">
             <div class="experience-image-container">
@@ -1206,36 +1354,6 @@
             </div>
           </div>
         </div>
-
-        <div class="experience-item fade-in-up">
-          <div class="experience-card">
-            <div class="experience-image-container">
-              <img
-                class="experience-image"
-                src="assets\Logo_SAI.avif"
-                alt="SAI Advanced Power Solutions Engineering Work"
-                loading="lazy"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              >
-              <div class="experience-image-placeholder" style="display: none;">⚡</div>
-            </div>
-            <div class="experience-content">
-              <div class="experience-header">
-                <div>
-                  <h3 class="experience-title">Engineering Intern</h3>
-                  <p class="experience-company">SAI Advanced Power Solutions</p>
-                </div>
-                <span class="experience-date">May 2023 – Jul 2025 (Multiple Terms)</span>
-              </div>
-              <ul class="experience-achievements">
-                <li>Designed optimized component layouts for manufacturing systems using Creo CAD, improving production efficiency and reducing assembly time</li>
-                <li>Executed comprehensive electrical testing protocols including Hypot, multimeter diagnostics, and 480V system verification for low/medium-voltage switchboards</li>
-                <li>Spearheaded quality assurance initiatives in electrical system assembly, achieving zero-defect verification standards</li>
-                <li><strong>Process Improvement:</strong> Developed improved insulation process for bus bar MCCB connectors using heat shrink tubing, reducing material costs by 25% while decreasing installation time significantly</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1250,16 +1368,12 @@
 
       <div class="projects-grid">
         
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <!-- PROJECT 1 IMAGE: CATAPULT PROJECT PHOTO GOES HERE   -->
-        <!-- Change "catapult-project.jpg" to your actual filename -->
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
         <div class="project-card fade-in-up">
           <div class="project-image-container">
             <img
               class="project-image"
               src="assets\Catapult_pic.JPEG"
-              alt="Award-winning mechanical catapult design"
+              alt="First-Place mechanical catapult design"
               loading="lazy"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
             >
@@ -1277,10 +1391,6 @@
           </div>
         </div>
 
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <!-- PROJECT 2 IMAGE: RC CAR PROJECT PHOTO GOES HERE     -->
-        <!-- Change "rc-car-project.jpg" to your actual filename -->
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
         <div class="project-card fade-in-up">
           <div class="project-image-container">
             <img
@@ -1304,7 +1414,6 @@
           </div>
         </div>
 
-        <!-- Vehicle Systems Simulation Project - No Image -->
         <div class="project-card fade-in-up">
           <div class="project-content">
             <h3 class="project-title">🔬 Vehicle Systems Simulation</h3>
