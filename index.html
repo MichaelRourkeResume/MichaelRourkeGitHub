@@ -258,8 +258,8 @@
     }
 
     .hero-image {
-      width: 200px;
-      height: 200px;
+      width: 280px;
+      height: 280px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid;
@@ -269,8 +269,8 @@
     }
 
     .hero-image-placeholder {
-      width: 200px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
       background: var(--gradient-primary);
       display: flex;
@@ -680,11 +680,10 @@
       height: 250px;
       object-fit: cover;
       transition: var(--transition);
-      transform: scale(1.1);
     }
 
     .project-card:hover .project-image {
-      transform: scale(1.0);
+      transform: scale(0.9);
     }
 
     .project-placeholder {
@@ -913,14 +912,9 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content fade-in-up">
-        
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <!-- YOUR HEADSHOT PHOTO GOES HERE - REPLACE THIS IMAGE  -->
-        <!-- Change "headshot.jpg" to your actual photo filename -->
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
         <img
           class="hero-image"
-          src="headshot.jpg"
+          src="assets\Headshot.jpg"
           alt="Michael Rourke - Professional Headshot"
           loading="eager"
           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -943,7 +937,7 @@
             <!-- YOUR RESUME PDF GOES HERE - REPLACE THIS LINK       -->
             <!-- Change "resume.pdf" to your actual PDF filename     -->
             <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-            <a href="resume.pdf" class="btn btn-primary" download>
+            <a href="assets\Michael Rourke Resume.pdf" class="btn btn-primary" download>
               📄 Download Resume
             </a>
             
@@ -1074,7 +1068,7 @@
               </div>
               <div class="interest-item">
                 <span>🏈</span>
-                <strong>NFL | NCAAF</strong>
+                <strong>NFL | NCAAF | PGA</strong>
               </div>
               <div class="interest-item">
                 <span>🏞️</span>
@@ -1174,7 +1168,7 @@
         <div class="project-card fade-in-up">
           <img
             class="project-image"
-            src="catapult-project.jpg"
+            src="assets\Catapult_pic.JPEG"
             alt="Award-winning mechanical catapult design"
             loading="lazy"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -1199,7 +1193,7 @@
         <div class="project-card fade-in-up">
           <img
             class="project-image"
-            src="rc-car-project.jpg"
+            src="assets\RC_Car_Pic.png"
             alt="High-performance RC car drivetrain system"
             loading="lazy"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -1297,12 +1291,7 @@
         </div>
 
         <div>
-          
-          <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-          <!-- YOUR RESUME PDF DOWNLOAD LINK GOES HERE             -->
-          <!-- Change "resume.pdf" to your actual PDF filename     -->
-          <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-          <a href="resume.pdf" download class="download-resume fade-in-up">
+          <a href="assets\Michael Rourke Resume.pdf" download class="download-resume fade-in-up">
             <svg style="width: 2rem; height: 2rem; margin-bottom: 1rem;" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
             </svg>
