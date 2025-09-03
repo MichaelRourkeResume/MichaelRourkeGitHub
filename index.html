@@ -510,91 +510,9 @@
       font-size: 1.5rem;
     }
 
-    .interests-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .interest-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1rem;
-      background: var(--gradient-success);
-      border-radius: var(--radius);
-      color: var(--white);
-      font-weight: 600;
-      transition: var(--transition);
-    }
-
-    .interest-item:hover {
-      transform: scale(1.05);
-    }
-
-    /* Interest Images Grid */
-    .interest-images-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .interest-image-item {
-      position: relative;
-      border-radius: var(--radius);
-      overflow: hidden;
-      aspect-ratio: 1;
-      background: var(--gradient-primary);
-      transition: var(--transition);
-    }
-
-    .interest-image-item:hover {
-      transform: scale(1.05);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .interest-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition);
-    }
-
-    .interest-image-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      text-align: center;
-      background: var(--gradient-primary);
-    }
-
-    .interest-image-placeholder .icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .interest-image-placeholder .label {
-      font-size: 0.9rem;
-    }
-
     @media (max-width: 768px) {
       .about-grid {
         grid-template-columns: 1fr;
-      }
-      
-      .interests-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .interest-images-grid {
-        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -855,6 +773,91 @@
       font-weight: 600;
     }
 
+    /* Personal Interests Section */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .interest-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--gradient-success);
+      border-radius: var(--radius);
+      color: var(--white);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .interest-item:hover {
+      transform: scale(1.05);
+    }
+
+    /* Interest Images Grid */
+    .interest-images-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .interest-image-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 1;
+      background: var(--gradient-primary);
+      transition: var(--transition);
+    }
+
+    .interest-image-item:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .interest-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .interest-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      background: var(--gradient-primary);
+    }
+
+    .interest-image-placeholder .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .interest-image-placeholder .label {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .interests-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .interest-images-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
     /* Contact Section */
     .contact {
       background: var(--bg-secondary);
@@ -1004,9 +1007,6 @@
 
   <!-- Animated Particles -->
   <ul class="particles">
-    <li class="particle" style="left: 25%; animation-duration: 25s; animation-delay: 0s;"></li>
-    <li class="particle" style="left: 10%; animation-duration: 20s; animation-delay: 2s;"></li>
-    <li class="particle" style="left: 70%; animation-duration: 30s; animation-delay: 4s;"></li>
     <li class="particle" style="left: 40%; animation-duration: 22s; animation-delay: 6s;"></li>
     <li class="particle" style="left: 65%; animation-duration: 28s; animation-delay: 8s;"></li>
     <li class="particle" style="left: 75%; animation-duration: 35s; animation-delay: 10s;"></li>
@@ -1024,6 +1024,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#interests">Interests</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
@@ -1148,102 +1149,6 @@
                 <div>
                   <strong>Clubs</strong>
                   <p style="margin: 0; color: var(--text-muted);">ND Rocketry Club, Fighting for St. Jude</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card fade-in-up" style="margin-top: 2rem;">
-            <h4 style="margin-bottom: 1.5rem; color: var(--accent-light);">Personal Interests & Hobbies</h4>
-            <div class="interests-grid">
-              <div class="interest-item">
-                <span>🏃‍♂️</span>
-                <div>
-                  <strong>Marathons</strong>
-                  <small style="opacity: 0.8;">Two-time finisher</small>
-                </div>
-              </div>
-              <div class="interest-item">
-                <span>⛳</span>
-                <div>
-                  <strong>Golf</strong>
-                  <small style="opacity: 0.8;">Handicap: 6</small>
-                </div>
-              </div>
-              <div class="interest-item">
-                <span>🤝</span>
-                <strong>Community Service</strong>
-              </div>
-              <div class="interest-item">
-                <span>🏈</span>
-                <strong>NFL | NCAAF | PGA</strong>
-              </div>
-              <div class="interest-item">
-                <span>🏞️</span>
-                <strong>National Parks</strong>
-              </div>
-              <div class="interest-item">
-                <span>🏔️</span>
-                <strong>Mountain Climbing</strong>
-              </div>
-            </div>
-
-            <!-- Enhanced Interest Images Section -->
-            <h5 style="margin: 2rem 0 1rem 0; color: var(--accent-light);">Interest Highlights</h5>
-            <div class="interest-images-grid">
-              <div class="interest-image-item">
-                <img
-                  class="interest-image"
-                  src="assets\Africa_pic.jpg"
-                  alt="Marathon Running"
-                  loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                >
-                <div class="interest-image-placeholder" style="display: none;">
-                  <div class="icon">🏃‍♂️</div>
-                  <div class="label">Marathon Running</div>
-                </div>
-              </div>
-
-              <div class="interest-image-item">
-                <img
-                  class="interest-image"
-                  src="assets\water.jpg"
-                  alt="Golf"
-                  loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                >
-                <div class="interest-image-placeholder" style="display: none;">
-                  <div class="icon">⛳</div>
-                  <div class="label">Golf</div>
-                </div>
-              </div>
-
-              <div class="interest-image-item">
-                <img
-                  class="interest-image"
-                  src="assets\Kili_2.JPG"
-                  alt="National Parks"
-                  loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                >
-                <div class="interest-image-placeholder" style="display: none;">
-                  <div class="icon">🏞️</div>
-                  <div class="label">National Parks</div>
-                </div>
-              </div>
-
-              <div class="interest-image-item">
-                <img
-                  class="interest-image"
-                  src="assets\Kili_pic.jpg"
-                  alt="Mountain Climbing"
-                  loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                >
-                <div class="interest-image-placeholder" style="display: none;">
-                  <div class="icon">🏔️</div>
-                  <div class="label">Mountain Climbing</div>
                 </div>
               </div>
             </div>
@@ -1423,6 +1328,111 @@
               <span class="tech-tag">Simulink</span>
               <span class="tech-tag">Systems Modeling</span>
               <span class="tech-tag">Data Visualization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Interests Section -->
+  <section id="interests" class="section">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">Personal Interests & Hobbies</h2>
+        <p class="section-subtitle">Pursuing excellence beyond engineering through athletics, adventure, and community service.</p>
+      </div>
+
+      <div class="card fade-in-up">
+        <h4 style="margin-bottom: 1.5rem; color: var(--accent-light);">Personal Interests & Hobbies</h4>
+        <div class="interests-grid">
+          <div class="interest-item">
+            <span>🏃‍♂️</span>
+            <div>
+              <strong>Marathons</strong>
+              <small style="opacity: 0.8;">Two-time finisher</small>
+            </div>
+          </div>
+          <div class="interest-item">
+            <span>⛳</span>
+            <div>
+              <strong>Golf</strong>
+              <small style="opacity: 0.8;">Handicap: 6</small>
+            </div>
+          </div>
+          <div class="interest-item">
+            <span>🤝</span>
+            <strong>Community Service</strong>
+          </div>
+          <div class="interest-item">
+            <span>🏈</span>
+            <strong>NFL | NCAAF | PGA</strong>
+          </div>
+          <div class="interest-item">
+            <span>🏞️</span>
+            <strong>National Parks</strong>
+          </div>
+          <div class="interest-item">
+            <span>🏔️</span>
+            <strong>Mountain Climbing</strong>
+          </div>
+        </div>
+
+        <h5 style="margin: 2rem 0 1rem 0; color: var(--accent-light);">Interest Highlights</h5>
+        <div class="interest-images-grid">
+          <div class="interest-image-item">
+            <img
+              class="interest-image"
+              src="assets\Africa_pic.jpg"
+              alt="Marathon Running"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="interest-image-placeholder" style="display: none;">
+              <div class="icon">🏃‍♂️</div>
+              <div class="label">Marathon Running</div>
+            </div>
+          </div>
+
+          <div class="interest-image-item">
+            <img
+              class="interest-image"
+              src="assets\water.jpg"
+              alt="Golf"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="interest-image-placeholder" style="display: none;">
+              <div class="icon">⛳</div>
+              <div class="label">Golf</div>
+            </div>
+          </div>
+
+          <div class="interest-image-item">
+            <img
+              class="interest-image"
+              src="assets\Kili_2.JPG"
+              alt="National Parks"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="interest-image-placeholder" style="display: none;">
+              <div class="icon">🏞️</div>
+              <div class="label">National Parks</div>
+            </div>
+          </div>
+
+          <div class="interest-image-item">
+            <img
+              class="interest-image"
+              src="assets\Kili_pic.jpg"
+              alt="Mountain Climbing"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="interest-image-placeholder" style="display: none;">
+              <div class="icon">🏔️</div>
+              <div class="label">Mountain Climbing</div>
             </div>
           </div>
         </div>
@@ -1697,4 +1707,7 @@
   </script>
 
 </body>
-</html>
+</html>25%; animation-duration: 25s; animation-delay: 0s;"></li>
+    <li class="particle" style="left: 10%; animation-duration: 20s; animation-delay: 2s;"></li>
+    <li class="particle" style="left: 70%; animation-duration: 30s; animation-delay: 4s;"></li>
+    <li class="particle" style="left:
