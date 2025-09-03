@@ -447,8 +447,8 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1rem;
       margin-top: 2rem;
     }
 
@@ -456,9 +456,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.5rem;
       background: rgba(255, 255, 255, 0.05);
-      padding: 1.5rem 1rem;
+      padding: 1rem 0.5rem;
       border-radius: var(--radius);
       transition: var(--transition);
       border: 1px solid var(--border);
@@ -471,23 +471,23 @@
     }
 
     .skill-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
       background: var(--gradient-primary);
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       font-weight: bold;
-      font-size: 18px;
+      font-size: 14px;
     }
 
     .skill-item span {
       font-weight: 600;
       color: var(--text-primary);
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
 
     .quick-facts {
@@ -584,10 +584,52 @@
       box-shadow: var(--shadow-xl);
       border: 1px solid var(--border);
       transition: var(--transition);
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
     }
 
     .experience-card:hover {
       border-color: var(--accent);
+    }
+
+    .experience-image-container {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .experience-image {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .experience-image:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .experience-image-placeholder {
+      width: 200px;
+      height: 200px;
+      background: var(--gradient-primary);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      box-shadow: var(--shadow-md);
+    }
+
+    .experience-content {
+      flex: 1;
     }
 
     .experience-header {
@@ -637,6 +679,23 @@
       color: var(--accent);
     }
 
+    @media (max-width: 768px) {
+      .experience-card {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .experience-image, .experience-image-placeholder {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .experience-header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
     /* Projects Grid */
     .projects-grid {
       display: grid;
@@ -653,6 +712,8 @@
       border: 1px solid var(--border);
       transition: var(--transition);
       position: relative;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-card::before {
@@ -675,21 +736,31 @@
       border-color: rgba(102, 126, 234, 0.5);
     }
 
-    .project-image {
-      width: 80%;
+    .project-image-container {
       height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .project-image {
+      width: 200px;
+      height: 200px;
       object-fit: cover;
+      border-radius: var(--radius);
       transition: var(--transition);
     }
 
     .project-card:hover .project-image {
-      transform: scale(0.8);
+      transform: scale(1.05);
     }
 
     .project-placeholder {
-      width: 80%;
-      height: 250px;
+      width: 200px;
+      height: 200px;
       background: var(--gradient-primary);
+      border-radius: var(--radius);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -700,6 +771,7 @@
 
     .project-content {
       padding: 2rem;
+      flex: 1;
     }
 
     .project-title {
@@ -793,11 +865,6 @@
     @media (max-width: 768px) {
       .contact-grid {
         grid-template-columns: 1fr;
-      }
-      
-      .experience-header {
-        flex-direction: column;
-        gap: 1rem;
       }
     }
 
@@ -1096,55 +1163,91 @@
       <div class="experience-timeline">
         <div class="experience-item fade-in-up">
           <div class="experience-card">
-            <div class="experience-header">
-              <div>
-                <h3 class="experience-title">Thermodynamics Research Assistant</h3>
-                <p class="experience-company">Notre Dame Global Gateway - Rome, Italy</p>
-              </div>
-              <span class="experience-date">Aug 2024 – Dec 2024</span>
+            <div class="experience-image-container">
+              <img
+                class="experience-image"
+                src="assets\Rom_pic.jpg"
+                alt="Thermodynamics Research in Rome"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="experience-image-placeholder" style="display: none;">🔬</div>
             </div>
-            <ul class="experience-achievements">
-              <li>Collaborated with Professor Pietro Paolo Ciottoli on cutting-edge thermodynamic cycle efficiency research for aerospace propulsion applications</li>
-              <li>Developed comprehensive MATLAB simulation models for combustion dynamics and heat transfer analysis in advanced engine configurations</li>
-              <li>Conducted parametric studies of Brayton cycle performance and created sophisticated visualization tools for data interpretation and research presentation</li>
-              <li>Contributed to international aerospace research standards and methodologies</li>
-            </ul>
+            <div class="experience-content">
+              <div class="experience-header">
+                <div>
+                  <h3 class="experience-title">Thermodynamics Research Assistant</h3>
+                  <p class="experience-company">Notre Dame Global Gateway - Rome, Italy</p>
+                </div>
+                <span class="experience-date">Aug 2024 – Dec 2024</span>
+              </div>
+              <ul class="experience-achievements">
+                <li>Collaborated with Professor Pietro Paolo Ciottoli on cutting-edge thermodynamic cycle efficiency research for aerospace propulsion applications</li>
+                <li>Developed comprehensive MATLAB simulation models for combustion dynamics and heat transfer analysis in advanced engine configurations</li>
+                <li>Conducted parametric studies of Brayton cycle performance and created sophisticated visualization tools for data interpretation and research presentation</li>
+                <li>Contributed to international aerospace research standards and methodologies</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div class="experience-item fade-in-up">
           <div class="experience-card">
-            <div class="experience-header">
-              <div>
-                <h3 class="experience-title">Design Engineer</h3>
-                <p class="experience-company">Notre Dame Rocketry Club</p>
-              </div>
-              <span class="experience-date">Aug 2023 – May 2024</span>
+            <div class="experience-image-container">
+              <img
+                class="experience-image"
+                src="assets\Rocket_pic.png"
+                alt="Notre Dame Rocketry Club Design Work"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="experience-image-placeholder" style="display: none;">🚀</div>
             </div>
-            <ul class="experience-achievements">
-              <li>Engineered propulsion integration systems using Fusion 360 for competition rocket achieving 4,000+ ft altitude with precision accuracy</li>
-              <li>Selected and analyzed advanced composite materials to optimize thrust-to-weight ratio while maintaining structural integrity under extreme conditions</li>
-              <li>Performed comprehensive aerodynamic simulations using RockSim and OpenRocket to ensure stable, predictable flight characteristics</li>
-              <li>Led final assembly coordination of rocket components with high-precision alignment and secure mechanical connections</li>
-            </ul>
+            <div class="experience-content">
+              <div class="experience-header">
+                <div>
+                  <h3 class="experience-title">Design Engineer</h3>
+                  <p class="experience-company">Notre Dame Rocketry Club</p>
+                </div>
+                <span class="experience-date">Aug 2023 – May 2024</span>
+              </div>
+              <ul class="experience-achievements">
+                <li>Engineered propulsion integration systems using Fusion 360 for competition rocket achieving 4,000+ ft altitude with precision accuracy</li>
+                <li>Selected and analyzed advanced composite materials to optimize thrust-to-weight ratio while maintaining structural integrity under extreme conditions</li>
+                <li>Performed comprehensive aerodynamic simulations using RockSim and OpenRocket to ensure stable, predictable flight characteristics</li>
+                <li>Led final assembly coordination of rocket components with high-precision alignment and secure mechanical connections</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div class="experience-item fade-in-up">
           <div class="experience-card">
-            <div class="experience-header">
-              <div>
-                <h3 class="experience-title">Engineering Intern</h3>
-                <p class="experience-company">SAI Advanced Power Solutions</p>
-              </div>
-              <span class="experience-date">May 2023 – Jul 2025 (Multiple Terms)</span>
+            <div class="experience-image-container">
+              <img
+                class="experience-image"
+                src="assets\Logo_SAI.avif"
+                alt="SAI Advanced Power Solutions Engineering Work"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="experience-image-placeholder" style="display: none;">⚡</div>
             </div>
-            <ul class="experience-achievements">
-              <li>Designed optimized component layouts for manufacturing systems using Creo CAD, improving production efficiency and reducing assembly time</li>
-              <li>Executed comprehensive electrical testing protocols including Hypot, multimeter diagnostics, and 480V system verification for low/medium-voltage switchboards</li>
-              <li>Spearheaded quality assurance initiatives in electrical system assembly, achieving zero-defect verification standards</li>
-              <li><strong>Process Improvement:</strong> Developed improved insulation process for bus bar MCCB connectors using heat shrink tubing, reducing material costs by 25% while decreasing installation time significantly</li>
-            </ul>
+            <div class="experience-content">
+              <div class="experience-header">
+                <div>
+                  <h3 class="experience-title">Engineering Intern</h3>
+                  <p class="experience-company">SAI Advanced Power Solutions</p>
+                </div>
+                <span class="experience-date">May 2023 – Jul 2025 (Multiple Terms)</span>
+              </div>
+              <ul class="experience-achievements">
+                <li>Designed optimized component layouts for manufacturing systems using Creo CAD, improving production efficiency and reducing assembly time</li>
+                <li>Executed comprehensive electrical testing protocols including Hypot, multimeter diagnostics, and 480V system verification for low/medium-voltage switchboards</li>
+                <li>Spearheaded quality assurance initiatives in electrical system assembly, achieving zero-defect verification standards</li>
+                <li><strong>Process Improvement:</strong> Developed improved insulation process for bus bar MCCB connectors using heat shrink tubing, reducing material costs by 25% while decreasing installation time significantly</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -1166,14 +1269,16 @@
         <!-- Change "catapult-project.jpg" to your actual filename -->
         <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
         <div class="project-card fade-in-up">
-          <img
-            class="project-image"
-            src="assets\Catapult_pic.JPEG"
-            alt="Award-winning mechanical catapult design"
-            loading="lazy"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          >
-          <div class="project-placeholder" style="display: none;">🏆</div>
+          <div class="project-image-container">
+            <img
+              class="project-image"
+              src="assets\Catapult_pic.JPEG"
+              alt="Award-winning mechanical catapult design"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="project-placeholder" style="display: none;">🏆</div>
+          </div>
           <div class="project-content">
             <h3 class="project-title">🏆 Award-Winning Mechanical Catapult</h3>
             <p class="project-description">Designed and fabricated a 1st place competition catapult using advanced manufacturing techniques including 3D printing and precision water-jet cutting. Featured simulation-driven redesign of launcher arm and trigger mechanism for optimal range and reliability.</p>
@@ -1191,14 +1296,16 @@
         <!-- Change "rc-car-project.jpg" to your actual filename -->
         <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
         <div class="project-card fade-in-up">
-          <img
-            class="project-image"
-            src="assets\RC_Car_Pic.png"
-            alt="High-performance RC car drivetrain system"
-            loading="lazy"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          >
-          <div class="project-placeholder" style="display: none;">🚗</div>
+          <div class="project-image-container">
+            <img
+              class="project-image"
+              src="assets\RC_Car_Pic.png"
+              alt="High-performance RC car drivetrain system"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="project-placeholder" style="display: none;">🚗</div>
+          </div>
           <div class="project-content">
             <h3 class="project-title">🚗 High-Performance RC Car System</h3>
             <p class="project-description">Engineered award-winning drive system optimized for speed, torque, and ramp handling capabilities. Utilized SolidWorks motion simulation to optimize drivetrain performance and integrate defensive/projectile systems for competition scenarios.</p>
@@ -1211,19 +1318,8 @@
           </div>
         </div>
 
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-        <!-- PROJECT 3 IMAGE: SIMULATION PROJECT SCREENSHOT HERE -->
-        <!-- Change "simulation-project.jpg" to your actual filename -->
-        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+        <!-- Vehicle Systems Simulation Project - No Image -->
         <div class="project-card fade-in-up">
-          <img
-            class="project-image"
-            src="simulation-project.jpg"
-            alt="Advanced vehicle dynamics simulation interface"
-            loading="lazy"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-          >
-          <div class="project-placeholder" style="display: none;">🔬</div>
           <div class="project-content">
             <h3 class="project-title">🔬 Vehicle Systems Simulation</h3>
             <p class="project-description">Developed comprehensive MATLAB-based model simulating complex vehicle dynamics with environmental variability factors. Created multi-DOF framework enabling real-time system response analysis for aerospace applications.</p>
@@ -1447,20 +1543,6 @@
           navLinks.classList.remove('active');
         }
       });
-    });
-
-    // Enhanced navbar scroll effect
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      if (!navbar) return;
-      
-      if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(10, 14, 39, 0.95)';
-        navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
-      } else {
-        navbar.style.background = 'rgba(10, 14, 39, 0.9)';
-        navbar.style.boxShadow = 'none';
-      }
     });
 
     // Intersection Observer for scroll animations
