@@ -1669,18 +1669,7 @@
       observer.observe(el);
     });
 
-    // Parallax effect for hero section
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const parallaxElements = document.querySelectorAll('.hero-content');
-      const speed = scrolled * 0.5;
-      
-      parallaxElements.forEach(element => {
-        element.style.transform = `translateY(${speed}px)`;
-      });
-    });
-
-    // Dynamic particle generation
+    // Dynamic particle generation - improved performance
     function createParticle() {
       const particlesContainer = document.querySelector('.particles');
       if (!particlesContainer) return;
@@ -1700,12 +1689,26 @@
       }, 45000);
     }
 
-    // Create new particles periodically
-    setInterval(createParticle, 3000);
+    // Create new particles periodically with better performance
+    setInterval(createParticle, 5000);
+
+    // Smooth navbar background on scroll
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Only update navbar background, remove parallax effect that was causing issues
+      if (scrollTop > 50) {
+        navbar.style.background = 'rgba(10, 14, 39, 0.95)';
+      } else {
+        navbar.style.background = 'rgba(10, 14, 39, 0.9)';
+      }
+      
+      lastScrollTop = scrollTop;
+    }, { passive: true });
   </script>
 
 </body>
-</html>25%; animation-duration: 25s; animation-delay: 0s;"></li>
-    <li class="particle" style="left: 10%; animation-duration: 20s; animation-delay: 2s;"></li>
-    <li class="particle" style="left: 70%; animation-duration: 30s; animation-delay: 4s;"></li>
-    <li class="particle" style="left: 25%; animation-duration: 25s; animation-delay: 0s;"></li>
+</html>
